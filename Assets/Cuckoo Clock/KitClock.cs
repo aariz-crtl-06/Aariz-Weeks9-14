@@ -64,6 +64,7 @@ public class KitClock : MonoBehaviour
             hour = 1;
         }
         OnTheHour.Invoke(hour);
+
     }
 
     public void StopTheClock()
