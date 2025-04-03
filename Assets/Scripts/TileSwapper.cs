@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 using UnityEngine.Tilemaps;
 
 public class TileSwapper : MonoBehaviour
@@ -9,6 +10,8 @@ public class TileSwapper : MonoBehaviour
 
     public Tile grass;
     public Tile stone;
+
+    public CinemachineCollisionImpulseSource impulsesource;
 
     void Update()
     {
@@ -22,7 +25,7 @@ public class TileSwapper : MonoBehaviour
 
             if (tilemap.GetTile(gridPos) == stone)
             {
-                Debug.Log("This is stone you dumbass turn me into grass idiot boy salaa panchood");
+                Debug.Log("This is stone you dumbahh turn me into grass idiot boy");
                 tilemap.SetTile(gridPos, grass);
             }
 
@@ -30,6 +33,7 @@ public class TileSwapper : MonoBehaviour
             {
                 Debug.Log("This is grass, turn me into stone!");
                 tilemap.SetTile(gridPos, stone);
+                impulsesource.GenerateImpulse();
 
             }
         }
