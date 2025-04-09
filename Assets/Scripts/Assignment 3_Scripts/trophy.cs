@@ -6,18 +6,20 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class trophy : MonoBehaviour
 {
-
+    //Referencing sprite renderer
     SpriteRenderer sr;
 
+    //Adds on click event to the object in inspector
     public UnityEvent OnClick;
     void Start()
     {
+        //Connects variable to sprite renderer in inspector
         sr = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //When mouse is left clicked on trophy, it'll inovke the function of choice (shrink)
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -29,12 +31,12 @@ public class trophy : MonoBehaviour
 
         
     }
-
+    //Randomly changes colour of trophy
     public void ChangeColour()
     {
         sr.color = Random.ColorHSV();
     }
-
+    //Shrinks trophy on click
     public void move()
     {
         transform.localScale -= Vector3.one*0.1f;

@@ -4,33 +4,35 @@ using UnityEngine;
 
 public class Throw : MonoBehaviour
 {
+    //References bowling ball object
     public GameObject ball;
+    //Score variable
     public float score;
 
-
+    //References buttons to control trophies
     public GameObject button1;
     public GameObject button2;
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //If 'G' is pressed, it'll play a coroutine 
         if(Input.GetKeyDown(KeyCode.G))
         {
             StartCoroutine(bowl());
         }
 
+        //Once the score reaches 3, 2 buttons will active in the scene
         if (score == 3)
         {
             button1.SetActive(true);
             button2.SetActive(true);
         }
     }
-
+    //coroutine that makes bowl animation play for 3 seconds then it's set off, also adds one to score
     private IEnumerator bowl()
     {
         ball.SetActive(true);
