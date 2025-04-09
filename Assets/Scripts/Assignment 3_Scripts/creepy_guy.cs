@@ -29,6 +29,7 @@ public class creepy_guy : MonoBehaviour
         }
 
     }
+
     //Coroutune to activate character, stay for 5 seconds and deactivate, adds to pop up value
     private IEnumerator menacing()
     {
