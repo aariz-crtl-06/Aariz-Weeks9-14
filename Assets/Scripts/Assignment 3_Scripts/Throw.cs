@@ -6,6 +6,10 @@ public class Throw : MonoBehaviour
 {
     public GameObject ball;
     public float score;
+
+
+    public GameObject button1;
+    public GameObject button2;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +26,8 @@ public class Throw : MonoBehaviour
 
         if (score == 3)
         {
-            celebration();
+            button1.SetActive(true);
+            button2.SetActive(true);
         }
     }
 
@@ -35,8 +40,4 @@ public class Throw : MonoBehaviour
 
     }
 
-    private void celebration()
-    {
-
-    }
 }
